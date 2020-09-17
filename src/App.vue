@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <transition name="fade">
+    <router-view></router-view>
+  </transition>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { Validator, localize, extend } from "vee-validate";
+import cn from "vee-validate/dist/locale/zh_CN";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  // computed: {
+  //   loading() {
+  //     return this.$store.state.home.loading;
+  //   },
+  // },
+  mounted() {
+    const dict = {
+      cn: {
+        messages: {
+          required: (name) => `请输入${name}`,
+        },
+        attributes: {
+          username: "用户名",
+        },
+      },
+    };
+    localize("cn", cn);
+    localize(dict);
+    // extend("username", {
+    //   validate: (value) => {
+    //     return ;
+    //   },
+    // });
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
