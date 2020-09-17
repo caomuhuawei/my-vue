@@ -1,14 +1,14 @@
-import Vue from 'vue'
+import Vue from "vue";
 
 import Paginate from "vuejs-paginate";
 import VueClipboard from "vue-clipboard2";
 import VueLazyload from "vue-lazyload";
 
-import App from './App.vue'
+import App from "./App.vue";
 import router from "./router";
 import store from "./stores/createStore";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.component("paginate", Paginate);
 Vue.use(VueClipboard);
 // Vue.use(VueLazyload, {
@@ -26,5 +26,5 @@ Vue.use(VueClipboard);
 new Vue({
   router,
   store,
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
