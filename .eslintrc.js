@@ -1,20 +1,17 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-  },
   globals: {
-    tcg: true,
-    createjs: true,
+    window: true,
+    document: true,
+    location: true,
+    history: true,
   },
   plugins: ["prettier"],
-  extends: [
-    "plugin:vue/essential",
-    // "@vue/standard",
-    "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/vue",
-  ],
+  parserOptions: {
+    parser: "babel-eslint",
+    ecmaVersion: 2016,
+    sourceType: "module",
+  },
+  extends: ["plugin:vue/essential", "prettier/standard", "plugin:prettier/recommended", "prettier/vue"],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
@@ -24,8 +21,5 @@ module.exports = {
     "object-curly-spacing": 0,
     "max-len": [1, 120, 2, { ignoreComments: true }],
     "prettier/prettier": "error",
-  },
-  parserOptions: {
-    parser: "babel-eslint",
   },
 };
