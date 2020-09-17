@@ -22,7 +22,6 @@ module.exports = {
     quotes: 0,
     "space-before-function-paren": 0,
     "object-curly-spacing": 0,
-    // indent: ["error", 2, { SwitchCase: 1, flatTernaryExpressions: true }],
     "max-len": [1, 120, 2, { ignoreComments: true }],
     "prettier/prettier": "error",
   },
