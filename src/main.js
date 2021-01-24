@@ -1,6 +1,5 @@
 import Vue from "vue";
 
-import Paginate from "vuejs-paginate";
 import VueClipboard from "vue-clipboard2";
 import VueLazyload from "vue-lazyload";
 import VueI18n from "vue-i18n";
@@ -11,7 +10,6 @@ import router from "./router";
 import store from "./stores/createStore";
 
 Vue.config.productionTip = false;
-Vue.component("paginate", Paginate);
 Vue.use(VueClipboard);
 Vue.use(VueI18n);
 const i18n = new VueI18n({
